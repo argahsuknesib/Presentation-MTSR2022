@@ -1,48 +1,294 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-		<title>reveal.js</title>
+    <title>Evaluation of Search Methods on Community Documents</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2
-						<aside class="notes">
-						<p>Some notes</p>
-						</aside>
-						<p>Some slide text</p>
-						<aside class="notes">
-						<p>and some more notes</p>
-					</aside>
-				</section>
-			</div>
-		</div>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/white.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <header
+        style="
+          position: absolute;
+          top: 50px;
+          left: 100px;
+          z-index: 500;
+          font-size: 100px;
+          background-color: rgba(0, 0, 0, 0.5);
+        "
+      ></header>
+      <div class="slides">
+        <section data-background-color="white">
+          <h4 style="font-family: sans-serif; font-size: 25px; margin: 5%">
+            Evaluation of Search Methods on Community Documents
+          </h4>
+          <div style="font-size: 25px; padding-top: 10px">
+            <a href="https://argahsuknesib.github.io/">Kushagra Singh Bisen</a>
+            et. al.
+          </div>
+          <div style="font-size: 25px; padding-top: 30px">
+            Presentation @ MTSR 2022
+          </div>
+          <div style="font-size: 25px; padding-top: 40px">08/11/2022</div>
+        </section>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+        <section data-background-color="white">
+          <section style="font-size: 35px">
+            <h5
+              style="
+                font-family: sans-serif;
+                font-size: 40px;
+                padding-bottom: 40px;
+              "
+            >
+              Some Background
+            </h5>
+            <p>Searching for domain-specific information on the web is,</p>
+            <ul>
+              <li>Kind of Tough</li>
+              <li>Requires a dedicated platform</li>
+            </ul>
+          </section>
+          <section style="font-size: 35px">
+            <h5
+              style="
+                font-family: sans-serif;
+                font-size: 40px;
+                padding-bottom: 40px;
+              "
+            >
+              Some Background
+            </h5>
+            <p>
+              We have different search methods over community documents but they
+              are,
+            </p>
+            <ul>
+              <li>Generally evaluated over efficiency, not user-experience.</li>
+              <li>Very different in implementation to be compared.</li>
+            </ul>
+          </section>
+          <section style="font-size: 35px">
+            <h5
+              style="
+                font-family: sans-serif;
+                font-size: 40px;
+                padding-bottom: 40px;
+              "
+            >
+              Context of the Research
+            </h5>
+            <p style="font-size: 30px">
+              The research is in context of the
+              <a
+                href="https://www.yorku.ca/cfr/implementing-an-intelligent-bilingual-knowledge-network-through-mapping-disability-advocacy-data-needs-scaled-to-local-national-and-international-policy-interventions/"
+                >WikiDisability Project</a
+              >
+              to make disability specific documents more accessible to NGOs,
+              stakeholders and people.
+            </p>
+            <p style="font-size: 30px">
+              The documents involved are either web based blogs or electronic
+              documents, represented in free text (as PDF) and in structured
+              data (in RDF, on a wikibase instance)
+            </p>
+            <p style="font-size: 30px">
+              We wished to compare different search methods for the best
+              user-experience of the stakeholders involved.
+            </p>
+          </section>
+        </section>
+        <section style="font-size: 35px" data-background-color="white">
+          <h5
+            style="
+              font-family: sans-serif;
+              font-size: 40px;
+              padding-bottom: 40px;
+            "
+          >
+            Search Methods
+          </h5>
+          <p style="font-size: 30px">
+            We chose the following search methods to compare,
+          </p>
+          <ul style="font-size: 25px">
+            <li>QAnswer Search over RDF datasets &rarr; for the wikibase</li>
+            <li>Elastic Search over Documents &rarr; for the documents.</li>
+            <li>QAnswer Search over Documents &rarr; for the documents.</li>
+          </ul>
+        </section>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+		<section style="font-size: 35px", data-background-color="white">
+			<section>	
+				<h5
+              style="
+                font-family: sans-serif;
+                font-size: 40px;
+                padding-bottom: 40px;
+              "
+            >
+              Evaluation Environment
+            </h5>
+            <p style="font-size: 25px">
+              The wikibase dataset and the documents were uploaded for every
+              user.
+            </p>
+			<p style="font-size: 25px">
+				There were <b>24</b> documents and <b>17</b> candidates for the experiment.
+			</p>
+            <p style="font-size: 25px">
+              Two different questionnaires were provided to the user,
+			  <ul style="font-size: 24px;">
+				<li>Search Instruction Questionnaire</li>
+				<li>User Experience Questionnaire</li>
+			  </ul>
+            </p>
+
+			</section>
+			<section>
+				<h5
+			  style="
+			  font-family: sans-serif;
+			  font-size: 30px;
+			  padding-bottom: 40px;
+			">
+				Search Instruction Questionnaire
+			</h5>
+			<ul style="font-size: 25px; position: relative;">
+				<li>
+					Instructions to search were <em>search-method agnostic.</em>
+				</li>
+				<li>
+					A 7-point Likert Scale was provided to record the relevancy of the information retreived.
+				</li>
+				<li>
+					6 search instructions were provided per search method (5 had answers, 1 did not)
+				</li>
+				<li>
+					2 minute was the decided threshold for each search.
+				</li>
+			</ul>
+			</section>
+			<section>
+				<h5 
+				style="
+			  font-family: sans-serif;
+			  font-size: 30px;
+			  padding-bottom: 40px;
+			">
+				User Experience Questionnaire
+				</h5>
+
+				<ul style="font-size: 25px; position: relative;">
+					<li>
+						Chosen as it provides a benchmark to compare.
+					</li>
+					<li>
+						UEQ lets users express feelings, impressions and attitudes towards a method.
+					</li>
+					<li>
+						The questionnaire contained 26 items, dividing into 6 scales.
+					</li>
+					<li>
+						UEQ finds how the candidates feel about the attractiveness (Pragmatic value) and the ease of use (Hedonic Value).
+					</li>
+				</ul>
+			</section>
+		</section>
+		<section>
+			<section  style="font-size: 20px", data-background-color="white">
+				<h5
+				style="
+				  font-family: sans-serif;
+				  font-size: 40px;
+				  padding-bottom: 40px;
+				"
+			  >
+				Results
+				<p style="font-size: 20px;">The scores obtained from UEQ on different scales</p>
+			  </h5>
+				  <table>
+					<thead>
+						<tr>
+							<th>Scales</th>
+							<th>QAnswer KG</th>
+							<th>ESDoc</th>
+							<th>QADoc</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Attractive</td>
+							<td> -0.272 </td>
+							<td> <b>-0.114</b></td>
+							<td>-0.433</td>
+						</tr>
+						<tr>
+							<td>Perspicuity</td>
+							<td><b>-0.014</b></td>
+							<td>-1.205</td>
+							<td>-0.05</td>
+						</tr>
+						<tr>
+							<td>Efficiency</td>
+							<td>-0.22</td>
+							<td><b>0.014</b></td>
+							<td>-0.583</td>
+						</tr>
+						<tr>
+							<td>Dependability</td>
+							<td>-0.132</td>
+							<td><b>-0.014</b></td>
+							<td>-0.266</td>
+						</tr>
+						<tr>
+							<td>Stimulation</td>
+							<td>-0.161</td>
+							<td><b>0.0588</b></td>
+							<td>-0.1</td>
+						</tr>
+						<tr>
+							<td>Novelty</td>
+							<td>-0.088</td>
+							<td>-0.191</td>
+							<td><b>0.266</b></td>
+						</tr>
+					</tbody>
+				  </table>
+			</section>
+			<section style="font-size: 35px", data-background-color="white">
+				
+			</section>
+		</section>
+		
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
 </html>
