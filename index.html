@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="dist/reset.css" />
     <link rel="stylesheet" href="dist/reveal.css" />
     <link rel="stylesheet" href="dist/theme/black.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Theme used for syntax highlighted code -->
     <link rel="stylesheet" href="plugin/highlight/white.css" />
@@ -207,7 +208,41 @@
 			</section>
 		</section>
 		<section>
-			<section  style="font-size: 20px", data-background-color="white">
+      <section style="font-size: 35px", data-background-color="white">
+        <h5 style="font-family: sans-serif; font-size: 35px; padding-bottom: 40px;">
+          Results
+        </h5>
+        <p style="font-size: 25px;">
+          ESDoc provided the most and relevant answers followed by QAnswer KG and QADoc
+          </p>
+          <p style="font-size: 25px;">
+            ESDoc also provided a false sense of information for instruction with <em>no answers</em>
+          </p>
+        </p>
+			</section>
+      <section style="font-size: 35px", data-background-color="white">
+        <h5 style="font-family: sans-serif; font-size: 35px; padding-bottom: 40px;">
+          Results
+        </h5>
+        <p>
+          <figure>
+          <img style="height: 500px;" src="images/true-flase-chart.jpg" alt="Likert scale scores for search methods in the relevancy of information retrieved">
+            <figcaption style="font-size: 20px;">Likert scale scores for search methods in the relevancy of information retrieved</figcaption>
+          </figure>
+        </p>
+      </section>
+      <section style="font-size: 35px", data-background-color="white">
+        <h5 style="font-family: sans-serif; font-size: 35px; padding-bottom: 40px;">
+          Results
+        </h5>
+        <p>
+          <figure>
+          <img style="height: 500px;" src="images/found-information.jpg" alt="found-information">
+            <figcaption style="font-size: 20px;">Percentage of users who found an answer</figcaption>
+          </figure>
+        </p>
+      </section>
+			<section style="font-size: 20px", data-background-color="white">
 				<h5
 				style="
 				  font-family: sans-serif;
@@ -266,12 +301,229 @@
 						</tr>
 					</tbody>
 				  </table>
+          <p>
+            The scores obtained in the experiment belong to categry <b>bad</b> for all scales in the UEQ benchmark.
+          </p>
 			</section>
-			<section style="font-size: 35px", data-background-color="white">
-				
-			</section>
+      <section style="font-size: 20px", data-background-color="white">
+        <h5
+				style="
+				  font-family: sans-serif;
+				  font-size: 40px;
+				  padding-bottom: 40px;
+				"
+			  >
+				Results
+			  </h5>
+        <p>One way ANOVA test</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Scale</th>
+              <th>F-Ratio</th>
+              <th>P-Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Attractive</td>
+              <td>1.269</td>
+              <td>0.29</td>
+            </tr>
+            <tr>
+              <td>Perspicuity</td>
+              <td>36.20</td>
+              <td> < 0.001 </td>
+            </tr>
+            <tr>
+              <td>Efficiency</td>
+              <td>5.284</td>
+              <td>0.008</td>
+            </tr>
+            <tr>
+              <td>Dependability</td>
+              <td>0.861</td>
+              <td>0.429</td>
+            </tr>
+            <tr>
+              <td>Stimulation</td>
+              <td>1.78</td>
+              <td>0.179</td>
+            </tr>
+            <tr>
+              <td>Novelty</td>
+              <td>3.2</td>
+              <td>0.049</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          <ul>
+            <li>No statistically significant difference between the methods on scales of Attractive, Dependability, Stimulation.</li>
+            <li>Statistically significant differences on the scales of Perspicuity, Efficiency and Novelty.</li>
+            <li>We further do Tukey-Kramer Test to find differences between each method to the other.</li>
+          </ul>
+        </p>
+      </section>
+        <section style="font-size: 20px", data-background-color="white">
+          <h5
+          style="
+            font-family: sans-serif;
+            font-size: 40px;
+            padding-bottom: 40px;
+          "
+          >
+          Results
+          </h5>
+          <p>q<sub>tukey</sub> values from Tukey-Kramer Test</p>
+          <p style="font-size: 15px;">critical value is <b>3.425</b></p>
+          <table>
+            <thead>
+              <tr>
+                <th>Scale</th>
+                <th>Groups</th>
+                <th>q<sub>tukey</sub></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Perspicuity</td>
+                <td>QAnswerKG vs ESDoc</td>
+                <td><b>10.6742</b></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>ESDoc vs QADoc</td>
+                <td><b>10.029</b></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>QAnswerKG vs QADoc</td>
+                <td>0.306</td>
+              </tr>
+              <tr>
+                <td>Efficiency</td>
+                <td>QAnswerKG vs ESDoc</td>
+                <td>1.86</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>ESDoc vs QADoc</td>
+                <td><b>4.579</b></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>QAnswerKG vs QADoc</td>
+                <td>2.777</td>
+              </tr>
+              <tr>
+                <td>Novelty</td>
+                <td>QAnswerKG vs ESDoc</td>
+                <td>0.798</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>ESDoc vs QADoc</td>
+                <td> <b>3.439</b></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>QAnswerKG vs QADoc</td>
+                <td>2.665</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>We see that there is a significant difference between,
+            <ul>
+              <li>ESDoc vs QAnswerKG and ESDoc vs QADoc for Perspicuity scale</li>
+              <li>ESDoc vs QADoc for both Novelty and Efficiency scale</li>
+            </ul>
+          </p>
+      </section>
+
+      <section style="font-size: 20px", data-background-color="white">
+        <h5
+        style="
+          font-family: sans-serif;
+          font-size: 40px;
+          padding-bottom: 40px;
+        "
+        >
+        Results
+        </h5>
+        <figure>
+          <img style="height: 400px;" src="images/pragmatic-hedonic.jpg" alt="pragmatic-hedonic">
+          <figcaption>Pragmatic and Hedonic Values from UEQ for each search method</figcaption>
+        </figure>
+        <p>
+          <ul>
+            <li>QAnswer KG was found to be the most efficient and useful.</li>
+            <li>QADoc was found to be the most pleasent to interact with.</li>
+          </ul>
+        </p>
+      </section>
 		</section>
-		
+
+    <section  style="font-size: 20px", data-background-color="white">
+      <section  style="font-size: 20px", data-background-color="white">
+        <h5
+      style="
+        font-family: sans-serif;
+        font-size: 30px;
+        padding-bottom: 40px;
+      "
+      >
+      Conclusion
+      </h5>
+      <p>
+        We presented a user-experience focused evaluation of search methods on domain-specific documents.
+      </p>
+      <p>
+        Elastic Search over Documents provided relevant answers but also provided a false sense of relevancy
+      </p>
+      <p>
+        For non-exploratory question answering with an exact answer, we need more than ESDoc.
+      </p>
+      <p>
+        QADoc was perceived to be innovative, but didn't perform well for information retreival. 
+      </p>
+      </section>
+      <section>
+        <h5
+        style="
+          font-family: sans-serif;
+          font-size: 30px;
+          padding-bottom: 40px;
+        "
+        >
+        Conclusion
+        </h5>
+        <p>
+          We believe that there is a need to combine various search methods for different types of questions.
+        </p>
+        <p>
+          We therefore developed a demo to combine the different search methods, and introduced fallback for one to the other.
+        </p>
+        <p>
+          We employed wikibase to store data around the document, QADoc for the data inside the document.
+        </p>
+        <p>
+          If there is no confident answer from both, we do an elastic search where the keywords are highlighted.
+        </p>
+
+        <p>
+          We further plan to introduce a new set of documents to repeat the experiment with the concluded combined search demo to evaluate the differences.
+        </p>
+      </section>
+    </section>
+		<section   style="font-size: 40px", data-background-color="white">
+      <p>
+        Thank you for your time, questions?
+      </p>
+      <p style="font-size: 20px;">
+        <a href="https://twitter.com/argahsuknesib" class="fa fa-twitter"></a>     @argahsuknesib 
+      </p>
+    </section>
       </div>
     </div>
 
